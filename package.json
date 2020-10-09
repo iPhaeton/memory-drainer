@@ -4,7 +4,7 @@
   "description": "An API that eats up a certain amount of memory by request",
   "main": "index.js",
   "scripts": {
-    "start": "node --expose-gc server.js",
+    "start": "node --expose-gc --max-old-space-size=${MEMORY} server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
