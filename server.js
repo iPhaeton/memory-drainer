@@ -20,8 +20,12 @@ app.post('/release', function (req, res) {
 });
 
 app.get('/stats', function (req, res) {
+    const memoryUsage = process.memoryUsage();
+
     res.send({
-        length: getArrLength()
+        length: getArrLength(),
+        heapUsed: memoryUsage.heapUsed / (1024 ** 2),
+        heapTotal: memoryUsage.heapTotal / (1024 ** 2),
     });
 });
 
