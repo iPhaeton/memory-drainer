@@ -14,6 +14,7 @@ app.post('/consume', function(req, res) {
 
 app.post('/release', function(req, res) {
     release(req.body.size);
+    global.gc();
     console.log('released', req.body.size);
     res.send('ok');
 })
