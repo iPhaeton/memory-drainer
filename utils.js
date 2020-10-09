@@ -27,8 +27,13 @@ function release(size) {
     };
 }
 
+function getArrLength() {
+    return arr.length;
+}
+
 module.exports = {
     keepAlive,
     consume,
     release,
+    getArrLength,
 }
